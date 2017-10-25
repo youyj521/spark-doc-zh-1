@@ -324,24 +324,26 @@ For example:
 
 </div>
 
-## Aggregations
 
-The [built-in DataFrames functions](api/scala/index.html#org.apache.spark.sql.functions$) provide common
-aggregations such as `count()`, `countDistinct()`, `avg()`, `max()`, `min()`, etc.
-While those functions are designed for DataFrames, Spark SQL also has type-safe versions for some of them in
-[Scala](api/scala/index.html#org.apache.spark.sql.expressions.scalalang.typed$) and
-[Java](api/java/org/apache/spark/sql/expressions/javalang/typed.html) to work with strongly typed Datasets.
-Moreover, users are not limited to the predefined aggregate functions and can create their own.
+## 聚合
 
-### Untyped User-Defined Aggregate Functions
+[内置DataFrames函数]（api / scala / index.html＃org.apache.spark.sql.functions $）提供常见的
+聚合如`count（）`，`countDistinct（）`，`avg（）`，`max（）`，`min（）`等
+虽然这些功能是为DataFrames设计的，但Spark SQL也有一些类型安全的版本
+[Scala]（api / scala / index.html＃org.apache.spark.sql.expressions.scalalang.typed $）和
+[Java]（api / java / org / apache / spark / sql / expressions / javalang / typed.html）使用强类型数据集。
+此外，用户不限于预定义的聚合功能，并且可以自己创建。
+
+
+### 无类型用户定义的聚合函数
 
 <div class="codetabs">
 
 <div data-lang="scala"  markdown="1">
 
-Users have to extend the [UserDefinedAggregateFunction](api/scala/index.html#org.apache.spark.sql.expressions.UserDefinedAggregateFunction)
-abstract class to implement a custom untyped aggregate function. For example, a user-defined average
-can look like:
+用户必须扩展[UserDefinedAggregateFunction]（api / scala / index.html＃org.apache.spark.sql.expressions.UserDefinedAggregateFunction）
+抽象类来实现自定义的无类型聚合函数。 例如，用户定义的平均值
+如下：
 
 {% include_example untyped_custom_aggregation scala/org/apache/spark/examples/sql/UserDefinedUntypedAggregation.scala%}
 </div>
@@ -353,10 +355,11 @@ can look like:
 
 </div>
 
-### Type-Safe User-Defined Aggregate Functions
+### 类型安全用户定义的聚合函数
 
-User-defined aggregations for strongly typed Datasets revolve around the [Aggregator](api/scala/index.html#org.apache.spark.sql.expressions.Aggregator) abstract class.
-For example, a type-safe user-defined average can look like:
+强类型数据集的用户定义聚合围绕[Aggregator]（api / scala / index.html＃org.apache.spark.sql.expressions.Aggregator）抽象类。
+例如，类型安全的用户定义的平均值可以如下所示：
+
 <div class="codetabs">
 
 <div data-lang="scala"  markdown="1">
